@@ -3,3 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  p I am ChaitanyaKrishna Hanumanthrao Chundiwar
+  - var btnType = 'info'
+  - var btnSize = 'lg'
+  button(type='button' class=`btn btn-${btnType} btn-${btnSize}` ) Press Me
