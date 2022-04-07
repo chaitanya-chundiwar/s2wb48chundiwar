@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1= title
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let House = [
+                      {
+                        "beverages_name": "budlight",
+                        "beverages_bottle_Size":"500ml",
+                        "beverages_cost": 5000
+                    },
+                    { 
+                        "beverages_name": "kingfisher",
+                        "beverages_bottle_Size": "1000ml",
+                        "beverages_cost": 15000
+                    },
+                    {
+                        "beverages_name": "corona",
+                        "beverages_bottle_Size": "750ml",
+                        "House_cost": 2000
+                    },                   
+                ]
+            each c,index in House
+                div(class="col-sm-2" onclick=`buy(${index})`) #{c.beverages_name}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{c.beverages_bottle_Size}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{c.beverages_cost}
+
+                script.                
+                      function buy(num)
+                      {
+                            alert(`You purchased item ${num+1}`)
+                      }
+  
+ 
+
+
