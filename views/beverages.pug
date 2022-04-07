@@ -2,37 +2,32 @@ extends layout
 
 block content
   h1= title
-  div(class="container-fluid")
-        div(class="row")
-            -
-                let House = [
-                      {
-                        "beverages_name": "budlight",
-                        "beverages_bottle_Size":"500ml",
-                        "beverages_cost": 5000
-                    },
-                    { 
-                        "beverages_name": "kingfisher",
-                        "beverages_bottle_Size": "1000ml",
-                        "beverages_cost": 15000
-                    },
-                    {
-                        "beverages_name": "corona",
-                        "beverages_bottle_Size": "750ml",
-                        "House_cost": 2000
-                    },                   
-                ]
-            each c,index in House
-                div(class="col-sm-2" onclick=`buy(${index})`) #{c.beverages_name}
-                div(class="col-sm-2" onclick=`buy(${index})`) #{c.beverages_bottle_Size}
-                div(class="col-sm-2" onclick=`buy(${index})`) #{c.beverages_cost}
+  -
+    let results = [
+      {
+        "beverages_name": "BudLighr",
+        "beverages_size": "Small",
+        "beverages_cost": 5
+      },
+      {
+        "beverages_name": "corona",
+        "beverages_size": "Medium",
+        "beverages_cost": 7
+      },
+      {
+        "beverages_name": "kingfisher",
+        "beverages_size": "Large",
+        "beverages_cost": 10
+      },                   
+    ]
+  div(class= "container-fluid")
+    div(class = "row")
+      each item,index in results
+        div(class= "col-sm-2", onclick=`buy(${index})`) #{item.beverages_name}
+        div(class= "col-sm-2", onclick=`buy(${index})`) #{item.beverages_size}
+        div(class= "col-sm-2", onclick=`buy(${index})`) #{item.beverages_cost}
 
-                script.                
-                      function buy(num)
-                      {
-                            alert(`You purchased item ${num+1}`)
-                      }
-  
- 
-
-
+  script.
+    function buy(itemNum){
+      alert(`You purchased item ${itemNum+1}`)
+    }
