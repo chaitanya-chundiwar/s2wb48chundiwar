@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var beveragesRouter = require('./routes/beverages');
 var addmodsRouter = require('./routes/addmods');
-var selectorRouter = require('./routes/selectors');
+var selectorsRouter = require('./routes/selectors');
 var app = express();
 
 // view engine setup
