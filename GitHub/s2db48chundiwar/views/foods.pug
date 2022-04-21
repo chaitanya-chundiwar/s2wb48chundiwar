@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}. My name is Jaichand Mulakalapalli
+  - let items = results
+  div(class="container-fluid")
+    div(class="row")
+      each cars, index in items
+        div(class="col-sm-2" onclick=`buy(${index+1})`) #{foods.food_brand} - #{foods.food_color} - $#{foods.food_cost}
+  
+  script.
+    function buy(index){
+      alert(`You purchased item ${index}`);
+    }

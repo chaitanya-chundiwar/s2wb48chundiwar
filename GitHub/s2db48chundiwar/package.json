@@ -1,17 +1,17 @@
 {
-  "name": "s2db07mulakalapalli",
+  "name": "s2db48chundiwar",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
+    "cookie-parser": "^1.4.6",
     "debug": "^4.3.4",
     "express": "^4.17.3",
     "http-errors": "^2.0.0",
     "mongodb": "^4.5.0",
-    "mongoose": "^6.2.10",
+    "mongoose": "^6.3.0",
     "morgan": "^1.10.0",
     "pug": "^3.0.2"
   },
@@ -21,7 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/chaitanya-chundiwar/s2db48chundiwar.git"
   },
-  "author": "Jaichand Mulakalapalli",
+  "author": "chaitanya chundiwar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chaitanya-chundiwar/s2db48chundiwar/issues"

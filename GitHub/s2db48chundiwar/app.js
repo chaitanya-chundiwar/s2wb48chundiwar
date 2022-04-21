@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/foods', foodsRouter);
+app.use('/cars', foodsRouter);
 app.use('/addmods', addmodsRouter);
 app.use('/selector', selectorRouter)
 app.use('/resource', resourceRouter);
@@ -83,7 +83,7 @@ async function recreateDB() {
     console.log("Fourth object saved in Costume")
   });
 
-// Delete everything in Food
+// Delete everything in Car
   await Food.deleteMany();
 
   let instance5 = new Food({ food_brand: "Nissan Versa", food_color: 'Silver', food_cost: 16205 });

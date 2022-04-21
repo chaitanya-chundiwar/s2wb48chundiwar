@@ -1,0 +1,52 @@
+extends layout
+block content
+    h1= title
+
+    if (toShow == null)
+        h2 No instance to delete
+    else
+        - let foodid = toShow._id
+        - let foodbrand = toShow.food_brand
+        - let foodcost = toShow.food_cost
+        - let foodcolor = toShow.food_color
+        - let actionid = "/resource/foods/" + carid
+        script let actionid = "#{actionid}"
+        div
+            div.row
+                div(class='foodAttr mr-3') Food ID is:
+                div #{carid}
+            div.row
+                div(class='foodAttr mr-3') Food Brand is:
+                div #{carbrand}
+            div.row
+                div(class='foodAttr mr-3') Food Color is:
+                div #{carcolor}
+            div.row
+                div(class='foodAttr mr-3') Food Cost is:
+                div #{carcost}
+
+        button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete
+        button(class="btn btn-secondary m-2" onclick="cancel()") Cancel
+
+    script.
+        function cancel() {
+            // Go back to the home page for the car collection
+            window.location.href='/foods'
+        }
+    script.
+        function deleteOnid() {
+            console.log("starting delete")
+            // delete first
+            fetch(actionid, {
+                method: 'DELETE' // Don't need a body for the delete
+            }).then((resp) => {
+                return resp.json(); // or resp.text() or whatever the server sends
+            }).then((body) => {
+                alert("Delete succeded")
+                window.location.href='/foods'
+                // TODO handle body
+            }).catch((error) => {
+                // TODO handle error
+                alert("Delete failed " + error )
+            });
+        }
